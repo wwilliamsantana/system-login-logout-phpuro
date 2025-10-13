@@ -13,7 +13,7 @@
  session_start();
 
  //Constante de controle
- define("CONTROL", ture);
+ define("CONTROL", true);
 
  // Verificamos se existe um user logado
  $usuario_logado = $_SESSION["usuario"] ?? null;
@@ -27,14 +27,14 @@
 
  // Analisar a rota
  $rotas = [
-  "login" => "login.php"
+  "login" => "login.php",
   "home" => "home.php"
- ]
+ ];
 
  // Verificando e acessando a rota
  if(!key_exists($rota, $rotas)){
-  die("Acesso negado!")
+  die("Acesso negado!");
  }
 
-  require_once $rotas[$rota]
+  require_once $rotas[$rota];
  
