@@ -25,6 +25,10 @@
   $rota = $_GET["rota"] ?? "home";
  }
 
+ if(!empty($usuario_logado) && $rota == "login"){
+  $rota = "home";
+ }
+
 
  // Analisar a rota
  $rotas = [
