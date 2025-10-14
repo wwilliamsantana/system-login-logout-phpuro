@@ -1,8 +1,22 @@
 <?php
 // Verificação para saber se passou pelo index, primeiro
-defined("CONTROL") or die("Acesso negado!")
+defined("CONTROL") or die("Acesso negado!");
+
+// Verifica se o form foi submetido
+
+if($_SERVER['REQUEST_METHOD'] == "POST"){
+  
+  //Verifica os dados de login/senha
+  $user = $_POST["user"] ?? null;
+  $pass = $_POST["pass"] ?? null;
+  $erro = null;
+
+  if(empty($user) || empty($pass)){
+    $erro = "Usuário e senha são obrigatórios!";
+  }
 
 
+}
 
 
 
@@ -19,7 +33,7 @@ defined("CONTROL") or die("Acesso negado!")
   
   <form 
     action="index.php?rota=login"
-    method="post"
+    method="POST"
   >
     <h3>Login</h3>
     <div>
@@ -34,6 +48,13 @@ defined("CONTROL") or die("Acesso negado!")
       <button type="suubmit">Entrar</button>
     </div>
   </form>
+
+
+  <?php if(!empty($erro)): ?>
+    <p style="color: red">
+      <?= $erro ?>
+    </p>
+  <?php endif; ?>
 
 </body>
 </html>
