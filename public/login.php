@@ -11,11 +11,30 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
   $pass = $_POST["pass"] ?? null;
   $erro = null;
 
+  // Validando entradas
   if(empty($user) || empty($pass)){
     $erro = "Usuário e senha são obrigatórios!";
   }
 
+  // Verifica se o usuário e senha são validos (match)
+  if(empty($erro)){
 
+    // Importando usuarios da pasta INC
+    $usuarios = require_once __DIR__ . "/../inc/usuarios.php";
+
+    foreach ($usuarios as $usuario) {
+      // Verificando o user e password de entrada no form com nosso "banco de dados".
+
+      if($usuario['usuario'] == $user && password_verify($pass, $usuario["senha"])){
+        // Login
+        $_SESSION["usuario"] = $user;
+        // Redirecionamento 
+        header("location: index.php?rota=home");
+      }
+    };
+
+    $erro = "Usuário e/ou senha inválida!";
+  }
 }
 
 
@@ -49,7 +68,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     </div>
   </form>
 
-
+  <!-- Exibir error -->
   <?php if(!empty($erro)): ?>
     <p style="color: red">
       <?= $erro ?>
