@@ -25,6 +25,7 @@
   $rota = $_GET["rota"] ?? "home";
  }
 
+
  // Analisar a rota
  $rotas = [
   "login" => "login.php",
