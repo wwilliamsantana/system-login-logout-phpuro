@@ -33,7 +33,8 @@
  // Analisar a rota
  $rotas = [
   "login" => "login.php",
-  "home" => "home.php"
+  "home" => "home.php",
+  "logout" => "logout.php"
  ];
 
  // Verificando e acessando a rota

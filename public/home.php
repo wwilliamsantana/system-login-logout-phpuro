@@ -12,5 +12,12 @@
 </head>
 <body>
   <h3>Bem-vindo á aplicação!</h3>
+  <hr>
+  <span>
+    Usuário: <strong><?= $_SESSION["usuario"] ?></strong>
+  </span>
+  <span>
+    <a href="index.php?rota=logout">Sair</a>
+  </span>
 </body>
 </html>
