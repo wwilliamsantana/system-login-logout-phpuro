@@ -18,13 +18,13 @@
 
 **Requer um ambiente de desenvolvimento web local configurado (como XAMPP, WAMP, MAMP ou Docker com Apache/Nginx e PHP ) e o GIT instalado!**
 
- # 1. Clone o repositório para a pasta raiz do seu servidor web  é faça o git clone e entre na pasta!
+ #### 1. Clone o repositório para a pasta raiz do seu servidor web  é faça o git clone e entre na pasta!
 ~~~bash
  #    - git clone https://github.com/wwilliamsantana/system-login-logout-phpuro.git
  #    - cd system-login-logout-phpuro
 ~~~
 
- # 2. Inicie seu servidor web (Apache/Nginx )
+ #### 2. Inicie seu servidor web (Apache/Nginx )
 ~~~bash
 
  #   - Abra seu navegador e acesse: http://localhost/system-login-logout-phpuro/ (ou o caminho correspondente no seu servidor local)
